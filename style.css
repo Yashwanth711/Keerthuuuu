@@ -1,17 +1,41 @@
-/* Window frame styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #ffe6eb;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Background */
+.bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Window frame */
 #windowFrame {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;       /* adjust for your image */
+  width: 400px;
   max-width: 80vw;
-  z-index: 0;         /* behind envelope and letter */
+  z-index: 0;
 }
 
-/* Envelope container */
+/* Envelope */
 #envelopeContainer {
-  margin-top: 0;
   cursor: pointer;
   z-index: 1;
 }
@@ -26,6 +50,7 @@
   transform: scale(1.1);
 }
 
+/* Cat */
 #cat {
   width: 180px;
   margin-top: 20px;
@@ -34,7 +59,7 @@
 
 .hidden { display: none; }
 
-/* Buttons & final text */
+/* Buttons */
 .buttons img {
   width: 100px;
   margin: 20px;
@@ -46,9 +71,52 @@
   transform: scale(1.2);
 }
 
+/* Final text */
 .final-text {
   font-size: 24px;
   font-weight: bold;
   color: #ff3b6f;
   margin-top: 20px;
+}
+
+/* Crying popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background: rgba(255,255,255,0.95);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#cryText {
+  font-size: 32px;
+  font-weight: bold;
+  color: #ff3b6f;
+  animation: pulse 0.6s infinite;
+  margin-bottom: 10px;
+}
+
+.popup img {
+  width: 220px;
+  animation: shake 0.4s infinite;
+  transition: width 0.3s ease;
+}
+
+@keyframes shake {
+  0% { transform: translate(0,0); }
+  25% { transform: translate(-4px,4px); }
+  50% { transform: translate(4px,-4px); }
+  75% { transform: translate(-4px,-4px); }
+  100% { transform: translate(0,0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }
