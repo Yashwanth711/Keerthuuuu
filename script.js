@@ -1,19 +1,26 @@
-// ===== Envelope & cat animation =====
 const envelope = document.getElementById("envelope");
 const cat = document.getElementById("cat");
 const letter = document.getElementById("letter");
+const windowFrame = document.getElementById("windowFrame");
 
+// Envelope click → show window + cat + letter
 envelope.addEventListener("click", () => {
   envelope.classList.add("hidden");
-  cat.src = "cat_heart.gif"; // switch to heart GIF when envelope opens
+
+  // Show window frame
+  windowFrame.classList.remove("hidden");
+
+  // Switch cat GIF to heart version
+  cat.src = "cat_heart.gif";
   cat.classList.remove("hidden");
 
+  // Show letter after 1s
   setTimeout(() => {
     letter.classList.remove("hidden");
-  }, 1000); // letter appears after 1s
+  }, 1000);
 });
 
-// ===== YES button =====
+// YES button logic
 const yesBtn = document.getElementById("yes");
 const finalText = document.getElementById("final-text");
 
@@ -21,7 +28,7 @@ yesBtn.addEventListener("click", () => {
   finalText.style.display = "block";
 });
 
-// ===== NO button / crying popup =====
+// NO button / crying popup
 const noBtn = document.getElementById("no");
 const cryingPopup = document.getElementById("cryingPopup");
 const cryingImg = document.getElementById("cryingImg");
