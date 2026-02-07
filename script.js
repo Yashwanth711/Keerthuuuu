@@ -1,5 +1,6 @@
 // Elements
-const openLetterBtn = document.getElementById("openLetterBtn");
+const envelope = document.getElementById("envelope");
+const cat = document.getElementById("cat");
 const letter = document.getElementById("letter");
 
 const yesBtn = document.getElementById("yes");
@@ -13,33 +14,33 @@ const cryText = document.getElementById("cryText");
 // Messages for NO clicks
 const messages = ["PLEASE 😭", "DON’T 😭", "I’M SAD 😭"];
 
-// Crying images (replace with your 4 image filenames)
-const cryingImages = [
-  "crying1.png",
-  "crying2.png",
-  "crying3.png",
-  "crying4.png"
-];
+// Crying images (replace with your 4 images)
+const cryingImages = ["crying1.png", "crying2.png", "crying3.png", "crying4.png"];
 
 // Gimmick sizes
-let imgSize = 220; // starting width of crying image
-let textSize = 32; // starting font size
+let imgSize = 220; 
+let textSize = 32;
 
-// Open letter button
-openLetterBtn.addEventListener("click", () => {
-  openLetterBtn.style.display = "none";
-  letter.classList.remove("hidden");
+// === Envelope opening logic ===
+envelope.addEventListener("click", () => {
+  envelope.classList.add("hidden");
+  cat.classList.remove("hidden");
+
+  // After some delay, show letter
+  setTimeout(() => {
+    letter.classList.remove("hidden");
+  }, 1000); // 1 second delay, adjust as needed
 });
 
-// YES logic → show final text
+// === YES logic ===
 yesBtn.addEventListener("click", () => {
   finalText.style.display = "block";
 });
 
-// NO logic → crying gimmicks
+// === NO logic ===
 noBtn.addEventListener("click", () => {
-  // Increase size each click
-  imgSize += 80;   
+  // Increase size
+  imgSize += 80;  
   textSize += 10;
 
   cryingImg.style.width = imgSize + "px";
@@ -54,7 +55,6 @@ noBtn.addEventListener("click", () => {
   // Show popup
   cryingPopup.style.display = "block";
 
-  // Hide after 2 seconds
   setTimeout(() => {
     cryingPopup.style.display = "none";
   }, 2000);
