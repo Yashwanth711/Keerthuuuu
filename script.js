@@ -1,7 +1,7 @@
 // Elements
 const envelope = document.getElementById("envelope");
-const cat = document.getElementById("cat");
 const letter = document.getElementById("letter");
+const cat = document.getElementById("cat");
 const windowFrame = document.getElementById("windowFrame");
 const yesBtn = document.getElementById("yes");
 const noBtn = document.getElementById("no");
@@ -18,25 +18,22 @@ let textSize = 32;
 
 // --- Envelope click ---
 envelope.addEventListener("click", () => {
-  envelope.classList.add("hidden");     // hide envelope
-  windowFrame.classList.remove("hidden"); // show window
-  cat.src = "cat_heart.gif";            // cat holds heart
+  envelope.classList.add("hidden");        // hide envelope
+  windowFrame.classList.remove("hidden");  // show window
+  cat.src = "cat_heart.gif";               // cat holds heart
   cat.classList.remove("hidden");
-
-  setTimeout(() => {
-    letter.classList.remove("hidden");  // show letter after 1s
-  }, 1000);
+  letter.classList.remove("hidden");       // show letter immediately
 });
 
 // --- YES click ---
 yesBtn.addEventListener("click", () => {
   cat.src = "cat_dance.gif";           // cat dances
-  finalText.style.display = "block";   // show final text
+  finalText.style.display = "block";   // show final Valentine text
 });
 
 // --- NO click ---
 noBtn.addEventListener("click", () => {
-  imgSize += 40;    // slightly grow
+  imgSize += 40;    // grow image
   textSize += 5;
 
   cryingImg.style.width = imgSize + "px";
