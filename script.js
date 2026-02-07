@@ -1,27 +1,28 @@
-// ==== Envelope & Cat Opening ====
+// ===== Envelope & cat animation =====
 const envelope = document.getElementById("envelope");
 const cat = document.getElementById("cat");
 const letter = document.getElementById("letter");
 
 envelope.addEventListener("click", () => {
   envelope.classList.add("hidden");
+  cat.src = "cat_heart.gif"; // switch to heart GIF when envelope opens
   cat.classList.remove("hidden");
 
   setTimeout(() => {
     letter.classList.remove("hidden");
-  }, 1000);
+  }, 1000); // letter appears after 1s
 });
 
-// ==== YES & final text logic ====
+// ===== YES button =====
 const yesBtn = document.getElementById("yes");
-const noBtn = document.getElementById("no");
 const finalText = document.getElementById("final-text");
 
 yesBtn.addEventListener("click", () => {
   finalText.style.display = "block";
 });
 
-// ==== Crying popup logic ====
+// ===== NO button / crying popup =====
+const noBtn = document.getElementById("no");
 const cryingPopup = document.getElementById("cryingPopup");
 const cryingImg = document.getElementById("cryingImg");
 const cryText = document.getElementById("cryText");
@@ -40,10 +41,10 @@ noBtn.addEventListener("click", () => {
   cryText.style.fontSize = textSize + "px";
 
   cryText.textContent = messages[Math.floor(Math.random() * messages.length)];
-
   cryingImg.src = cryingImages[Math.floor(Math.random() * cryingImages.length)];
 
   cryingPopup.style.display = "block";
+
   setTimeout(() => {
     cryingPopup.style.display = "none";
   }, 2000);
