@@ -1,3 +1,4 @@
+/* Body */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -57,12 +58,31 @@ body {
   z-index: 2;
 }
 
-.hidden { display: none; }
+/* Letter content */
+#letter {
+  position: relative;
+  z-index: 3;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-/* Buttons */
+#letter h2 {
+  font-size: 28px;
+  color: #ff3b6f;
+  margin-bottom: 15px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 15px;
+}
+
 .buttons img {
-  width: 100px;
-  margin: 20px;
+  width: 120px;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
@@ -76,8 +96,12 @@ body {
   font-size: 24px;
   font-weight: bold;
   color: #ff3b6f;
+  display: none;
   margin-top: 20px;
 }
+
+/* Hidden utility */
+.hidden { display: none; }
 
 /* Crying popup */
 .popup {
@@ -107,6 +131,7 @@ body {
   transition: width 0.3s ease;
 }
 
+/* Animations */
 @keyframes shake {
   0% { transform: translate(0,0); }
   25% { transform: translate(-4px,4px); }
