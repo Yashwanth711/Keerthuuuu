@@ -34,17 +34,12 @@ body {
   z-index: 0;
 }
 
-/* Envelope container */
-#envelopeContainer {
-  position: relative;
-  z-index: 2;
-  cursor: pointer;
-}
-
 /* Envelope */
 #envelope {
   width: 250px;
   max-width: 80vw;
+  z-index: 2;
+  cursor: pointer;
   transition: transform 0.3s ease;
 }
 
@@ -52,16 +47,22 @@ body {
   transform: scale(1.1);
 }
 
-/* Letter inside envelope */
+/* Cat */
+#cat {
+  width: 180px;
+  margin-top: 20px;
+  z-index: 1;
+  position: relative;
+}
+
+/* Letter container */
 #letter {
-  position: absolute;
-  top: -220px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 }
 
 #letter h2 {
@@ -95,14 +96,6 @@ body {
   color: #ff3b6f;
   display: none;
   margin-top: 10px;
-}
-
-/* Cat */
-#cat {
-  width: 180px;
-  margin-top: 20px;
-  z-index: 1;
-  position: relative;
 }
 
 /* Hidden class */
