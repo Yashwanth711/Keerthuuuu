@@ -1,46 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Valentine Letter</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine Letter 💌</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Aldrich&family=Pixelify+Sans:wght@400..700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Document</title>
-  </head>
-  <body>
-    <!-- Envelope Screen -->
-    <div id="envelope-container">
-      <img src="envelope.png" alt="Envelope" id="envelope" />
-      <p>♡ Letter for You ♡</p>
+  <!-- Open Letter Button -->
+  <button id="openLetterBtn">Open Letter 💌</button>
+
+  <!-- Letter Content (hidden initially) -->
+  <div id="letter" class="hidden">
+    <h2>Will you say YES? 💖</h2>
+
+    <div class="buttons">
+      <button id="yes">Yes</button>
+      <button id="no">No</button>
     </div>
 
-    <!-- Letter Screen -->
-    <div id="letter-container">
-      <div class="letter-window">
-        <h1 id="letter-title">Keerthuu!!! Will you be my Valentine?</h1>
+    <!-- Final text that appears after YES -->
+    <p id="final-text" class="final-text" style="display: none">
+      <strong>Valentine Date:</strong> Monarch Restaurant at 7PM
+    </p>
+  </div>
 
-        <img src="cat_heart.gif" class="cat" id="letter-cat" />
+  <!-- Crying Popup -->
+  <div id="cryingPopup" class="popup">
+    <p id="cryText">WHY 😭</p>
+    <img id="cryingImg" src="crying.png" alt="Crying">
+  </div>
 
-        <div class="buttons" id="letter-buttons">
-          <img src="yes.png" class="btn yes-btn" alt="Yes" />
-
-          <div class="no-wrapper">
-            <img src="no.png" class="btn no-btn" alt="No" />
-          </div>
-        </div>
-
-        <p id="final-text" class="final-text" style="display: none">
-          <strong>Valentine Date:</strong> Monarch Restaurant at 7PM
-        </p>
-      </div>
-    </div>
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
