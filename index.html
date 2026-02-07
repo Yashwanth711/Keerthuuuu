@@ -7,22 +7,24 @@
 </head>
 <body>
 
-  <!-- Envelope / Cat / Existing letter animations -->
+  <!-- Background image if used -->
+  <img src="heart-bg.jpg" class="bg" alt="Background">
+
+  <!-- Envelope animation -->
   <div id="envelopeContainer">
     <img id="envelope" src="envelope.png" alt="Envelope">
-    <img id="cat" src="cat.png" alt="Cat" class="hidden">
+    <img id="cat" src="cat_dance.gif" class="hidden" alt="Cat dancing">
   </div>
 
-  <!-- Letter Content (hidden initially) -->
+  <!-- Letter Content -->
   <div id="letter" class="hidden">
     <h2>Will you say YES? 💖</h2>
 
     <div class="buttons">
-      <button id="yes">Yes</button>
-      <button id="no">No</button>
+      <img id="yes" src="yes.png" alt="Yes">
+      <img id="no" src="no.png" alt="No">
     </div>
 
-    <!-- Final text that appears after YES -->
     <p id="final-text" class="final-text" style="display: none">
       <strong>Valentine Date:</strong> Monarch Restaurant at 7PM
     </p>
