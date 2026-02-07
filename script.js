@@ -1,72 +1,51 @@
 // Elements
-const envelope = document.getElementById("envelope-container");
-const letter = document.getElementById("letter-container");
-const noBtn = document.querySelector(".no-btn");
-const yesBtn = document.querySelector(".btn[alt='Yes']");
+const openLetterBtn = document.getElementById("openLetterBtn");
+const letter = document.getElementById("letter");
 
-const title = document.getElementById("letter-title");
-const catImg = document.getElementById("letter-cat");
-const buttons = document.getElementById("letter-buttons");
+const yesBtn = document.getElementById("yes");
+const noBtn = document.getElementById("no");
 const finalText = document.getElementById("final-text");
 
-// Click Envelope
+const cryingPopup = document.getElementById("cryingPopup");
+const cryingImg = document.getElementById("cryingImg");
+const cryText = document.getElementById("cryText");
 
-envelope.addEventListener("click", () => {
-    envelope.style.display = "none";
-    letter.style.display = "flex";
+// Messages for NO clicks
+const messages = ["PLEASE 😭", "DON’T 😭", "I’M SAD 😭"];
 
-    setTimeout( () => {
-        document.querySelector(".letter-window").classList.add("open");
-    },50);
+// Gimmick sizes
+let imgSize = 220;
+let textSize = 32;
+
+// Open letter button
+openLetterBtn.addEventListener("click", () => {
+  openLetterBtn.style.display = "none";
+  letter.classList.remove("hidden");
 });
 
-// Logic to move the NO btn
-
-noBtn.addEventListener("mouseover", () => {
-    const min = 200;
-    const max = 200;
-
-    const distance = Math.random() * (max - min) + min;
-    const angle = Math.random() * Math.PI * 2;
-
-    const moveX = Math.cos(angle) * distance;
-    const moveY = Math.sin(angle) * distance;
-
-    noBtn.style.transition = "transform 0.3s ease";
-    noBtn.style.transform = `translate(${moveX}px, ${moveY}px)`;
-});
-
-// Logic to make YES btn to grow
-
-// let yesScale = 1;
-
-// yesBtn.style.position = "relative"
-// yesBtn.style.transformOrigin = "center center";
-// yesBtn.style.transition = "transform 0.3s ease";
-
-// noBtn.addEventListener("click", () => {
-//     yesScale += 2;
-
-//     if (yesBtn.style.position !== "fixed") {
-//         yesBtn.style.position = "fixed";
-//         yesBtn.style.top = "50%";
-//         yesBtn.style.left = "50%";
-//         yesBtn.style.transform = `translate(-50%, -50%) scale(${yesScale})`;
-//     }else{
-//         yesBtn.style.transform = `translate(-50%, -50%) scale(${yesScale})`;
-//     }
-// });
-
-// YES is clicked
-
+// YES logic → show final text
 yesBtn.addEventListener("click", () => {
-    title.textContent = "Yippeeee!";
+  finalText.style.display = "block";
+});
 
-    catImg.src = "cat_dance.gif";
+// NO logic → crying gimmicks
+noBtn.addEventListener("click", () => {
+  // Increase size
+  imgSize += 40;
+  textSize += 6;
 
-    document.querySelector(".letter-window").classList.add("final");
+  cryingImg.style.width = imgSize + "px";
+  cryText.style.fontSize = textSize + "px";
 
-    buttons.style.display = "none";
+  // Random text
+  const randomIndex = Math.floor(Math.random() * messages.length);
+  cryText.textContent = messages[randomIndex];
 
-    finalText.style.display = "block";
+  // Show popup
+  cryingPopup.style.display = "block";
+
+  // Hide after 2 seconds
+  setTimeout(() => {
+    cryingPopup.style.display = "none";
+  }, 2000);
 });
