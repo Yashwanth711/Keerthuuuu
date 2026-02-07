@@ -7,8 +7,11 @@
 </head>
 <body>
 
-  <!-- Open Letter Button -->
-  <button id="openLetterBtn">Open Letter 💌</button>
+  <!-- Envelope / Cat / Existing letter animations -->
+  <div id="envelopeContainer">
+    <img id="envelope" src="envelope.png" alt="Envelope">
+    <img id="cat" src="cat.png" alt="Cat" class="hidden">
+  </div>
 
   <!-- Letter Content (hidden initially) -->
   <div id="letter" class="hidden">
@@ -25,10 +28,10 @@
     </p>
   </div>
 
-  <!-- Crying Popup -->
+  <!-- Crying Popup (small, NOT fullscreen) -->
   <div id="cryingPopup" class="popup">
     <p id="cryText">WHY 😭</p>
-    <img id="cryingImg" src="crying.png" alt="Crying">
+    <img id="cryingImg" src="crying1.png" alt="Crying">
   </div>
 
   <script src="script.js"></script>
