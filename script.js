@@ -13,9 +13,17 @@ const cryText = document.getElementById("cryText");
 // Messages for NO clicks
 const messages = ["PLEASE 😭", "DON’T 😭", "I’M SAD 😭"];
 
+// Crying images (replace with your 4 image filenames)
+const cryingImages = [
+  "crying1.png",
+  "crying2.png",
+  "crying3.png",
+  "crying4.png"
+];
+
 // Gimmick sizes
-let imgSize = 220;
-let textSize = 32;
+let imgSize = 220; // starting width of crying image
+let textSize = 32; // starting font size
 
 // Open letter button
 openLetterBtn.addEventListener("click", () => {
@@ -30,16 +38,18 @@ yesBtn.addEventListener("click", () => {
 
 // NO logic → crying gimmicks
 noBtn.addEventListener("click", () => {
-  // Increase size
-  imgSize += 40;
-  textSize += 6;
+  // Increase size each click
+  imgSize += 80;   
+  textSize += 10;
 
   cryingImg.style.width = imgSize + "px";
   cryText.style.fontSize = textSize + "px";
 
   // Random text
-  const randomIndex = Math.floor(Math.random() * messages.length);
-  cryText.textContent = messages[randomIndex];
+  cryText.textContent = messages[Math.floor(Math.random() * messages.length)];
+
+  // Random crying image
+  cryingImg.src = cryingImages[Math.floor(Math.random() * cryingImages.length)];
 
   // Show popup
   cryingPopup.style.display = "block";
