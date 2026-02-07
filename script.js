@@ -1,7 +1,7 @@
 // Elements
 const envelope = document.getElementById("envelope");
-const letter = document.getElementById("letter");
 const cat = document.getElementById("cat");
+const letter = document.getElementById("letter");
 const windowFrame = document.getElementById("windowFrame");
 const yesBtn = document.getElementById("yes");
 const noBtn = document.getElementById("no");
@@ -22,7 +22,7 @@ envelope.addEventListener("click", () => {
   windowFrame.classList.remove("hidden");  // show window
   cat.src = "cat_heart.gif";               // cat holds heart
   cat.classList.remove("hidden");
-  letter.classList.remove("hidden");       // show letter immediately
+  letter.classList.remove("hidden");       // show letter
 });
 
 // --- YES click ---
